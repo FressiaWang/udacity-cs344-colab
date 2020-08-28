@@ -29,7 +29,7 @@ void referenceCalculation(const float* const h_logLuminance, unsigned int* const
     unsigned int bin = std::min(static_cast<unsigned int>(numBins - 1),
                            static_cast<unsigned int>((h_logLuminance[i] - logLumMin) / logLumRange * numBins));
     histo[bin]++;
-    h_cdf[bin]++;
+    h_cdf[bin] = histo[bin];
   }
 
   //Step 4
