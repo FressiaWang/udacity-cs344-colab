@@ -109,6 +109,9 @@ int main(int argc, char **argv) {
   }
 
   referenceCalculation(h_luminance, h_cdf, numRows, numCols, numBins, min_logLum, max_logLum);
+  for (size_t i = 0; i< numBins; i++){
+	  cout << "host cdf :" << h_cdf[i] << endl;
+	  cout << "gpu cdf :" << d_cdf[i] << endl;
   //printf("min %f\n", min_logLum);
   //printf("max %f\n", max_logLum);
   //for(int i = 0; i < numBins; i++)
