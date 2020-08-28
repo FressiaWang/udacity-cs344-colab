@@ -109,15 +109,18 @@ int main(int argc, char **argv) {
   }
 
   referenceCalculation(h_luminance, h_cdf, numRows, numCols, numBins, min_logLum, max_logLum);
-  for (int i = 0; i < numBins; i++)
+	
+  for(int i = 0; i < numBins; i++)
+        printf("cdf out %d\n", h_cdf[i]);
+	
+  for(int i = 0; i < numBins; i++)
 	  printf("pos : %d host : %d gpu : %d\n", i, h_cdf[i], d_cdf[i]);
   //std::cout << "pos :" << i << std::endl;
   //std::cout << "host cdf :" << h_cdf[i] << std::endl;
   //std::cout << "gpu cdf :" << d_cdf[i] << std::endl;
   //printf("min %f\n", min_logLum);
   //printf("max %f\n", max_logLum);
-  //for(int i = 0; i < numBins; i++)
-  //      printf("cdf out %d\n", h_cdf[i]);
+  
   checkCudaErrors(cudaMemcpy(d_cdf, h_cdf, sizeof(unsigned int) * numBins, cudaMemcpyHostToDevice));
 
   //check results and output the tone-mapped image
