@@ -29,17 +29,17 @@ void referenceCalculation(const float* const h_logLuminance, unsigned int* const
     unsigned int bin = std::min(static_cast<unsigned int>(numBins - 1),
                            static_cast<unsigned int>((h_logLuminance[i] - logLumMin) / logLumRange * numBins));
     histo[bin]++;
-    h_cdf[bin] = histo[bin];
+    //h_cdf[bin] = histo[bin];
   }
 
   //Step 4
   //finally we perform and exclusive scan (prefix sum)
   //on the histogram to get the cumulative distribution
-  /*
+  
   h_cdf[0] = 0;
   for (size_t i = 1; i < numBins; ++i) {
     h_cdf[i] = h_cdf[i - 1] + histo[i - 1];
-  }*/
+  }
 
   delete[] histo;
 }
