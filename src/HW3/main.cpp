@@ -109,12 +109,11 @@ int main(int argc, char **argv) {
   }
 
   referenceCalculation(h_luminance, h_cdf, numRows, numCols, numBins, min_logLum, max_logLum);
-  for (int i = 0; i< numBins; ++i){
-	  //std::cout << "pos :" << i << std::endl;
-	  //std::cout << "host cdf :" << h_cdf[i] << std::endl;
-	  //std::cout << "gpu cdf :" << d_cdf[i] << std::endl;
+  for (int i = 0; i < numBins; i++)
 	  printf("pos : %d host : %d gpu : %d\n", i, h_cdf[i], d_cdf[i]);
-  }
+  //std::cout << "pos :" << i << std::endl;
+  //std::cout << "host cdf :" << h_cdf[i] << std::endl;
+  //std::cout << "gpu cdf :" << d_cdf[i] << std::endl;
   //printf("min %f\n", min_logLum);
   //printf("max %f\n", max_logLum);
   //for(int i = 0; i < numBins; i++)
