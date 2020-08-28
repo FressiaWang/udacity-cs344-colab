@@ -109,7 +109,10 @@ int main(int argc, char **argv) {
   }
 
   referenceCalculation(h_luminance, h_cdf, numRows, numCols, numBins, min_logLum, max_logLum);
-
+  printf("min %d\n", min_logLum);
+  printf("max %d\n", max_logLum);
+  for(int i = 0; i < numBins; i++)
+        printf("cdf out %d\n", h_cdf[i]);
   checkCudaErrors(cudaMemcpy(d_cdf, h_cdf, sizeof(unsigned int) * numBins, cudaMemcpyHostToDevice));
 
   //check results and output the tone-mapped image
