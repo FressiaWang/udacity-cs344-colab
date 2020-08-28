@@ -115,10 +115,10 @@ int main(int argc, char **argv) {
   
   //for(int i = 0; i < numBins; i++)
   //     printf("cdf out %d\n", h_cdf[i]);
-  unsigned int *t_cdf = (unsigned int *) malloc(sizeof(unsigned int)*numBins);
-  checkCudaErrors(cudaMemcpy(t_cdf, d_cdf, numBins * sizeof(unsigned int), cudaMemcpyDeviceToHost));
-  for(int i = 0; i < numBins; i++)
-        printf("pos %d cpu %d gpu %d\n", i, h_cdf[i], t_cdf[i]);
+  //unsigned int *t_cdf = (unsigned int *) malloc(sizeof(unsigned int)*numBins);
+  //checkCudaErrors(cudaMemcpy(t_cdf, d_cdf, numBins * sizeof(unsigned int), cudaMemcpyDeviceToHost));
+  //for(int i = 0; i < numBins; i++)
+  //     printf("pos %d cpu %d gpu %d\n", i, h_cdf[i], t_cdf[i]);
   //std::cout << "pos :" << i << std::endl;
   //std::cout << "host cdf :" << h_cdf[i] << std::endl;
   //std::cout << "gpu cdf :" << d_cdf[i] << std::endl;
